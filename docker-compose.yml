@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  servico-usuarios:
+    build: ./servico-usuarios
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+
+  servico-pedidos:
+    build: ./servico-pedidos
+    ports:
+      - "3002:3002"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
